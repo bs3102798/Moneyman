@@ -1,4 +1,4 @@
-const { Schema, models } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const billsSchema = new Schema({
     total: {
@@ -15,6 +15,6 @@ const billsSchema = new Schema({
         timestamps: true
     });
 
-const Bills = models("bills", billsSchema)
+const Bills = model("Bills", billsSchema)
 
-module.exports = billsSchema
+module.exports = Bills;
