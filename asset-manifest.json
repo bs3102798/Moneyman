@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Moneyman/static/css/main.e6c13ad2.css",
-    "main.js": "/Moneyman/static/js/main.910f02c7.js",
+    "main.js": "/Moneyman/static/js/main.f10debba.js",
     "static/js/787.a72053f2.chunk.js": "/Moneyman/static/js/787.a72053f2.chunk.js",
     "index.html": "/Moneyman/index.html",
     "main.e6c13ad2.css.map": "/Moneyman/static/css/main.e6c13ad2.css.map",
-    "main.910f02c7.js.map": "/Moneyman/static/js/main.910f02c7.js.map",
+    "main.f10debba.js.map": "/Moneyman/static/js/main.f10debba.js.map",
     "787.a72053f2.chunk.js.map": "/Moneyman/static/js/787.a72053f2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.910f02c7.js"
+    "static/js/main.f10debba.js"
   ]
 }
