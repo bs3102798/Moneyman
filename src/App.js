@@ -5,6 +5,15 @@ import About from './components/Dashboard';
 import Portfolio from './components/DataForm';
 import Resume from './components/Resume';
 import Contact from './components/Login';
+import IconButton from '@mui/material/IconButton';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Visibility from '@mui/icons-material/Visibility';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import ColorPickerOption from './components/ColorPickerOption'; 
+import colors from './components/colors'; 
 
 const App = () => {
   return (
