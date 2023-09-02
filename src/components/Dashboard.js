@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -38,7 +39,17 @@ const Dashboard = () => {
         // For example, you can send the billInfo data to a server
         // or perform any other action you need.
         console.log('Submit button clicked');
+        const calculatedTotalCost = calculateTotalCost(); // Implement this function
+    setTotalCost(calculatedTotalCost);
     };
+
+    return (
+        <div>
+          <div>Total Cost: ${totalCost}</div>
+          <button onClick={handleSubmit}>Submit</button>
+        </div>
+      );
+    }
 
     return (
         <section id="about">
@@ -77,8 +88,10 @@ const Dashboard = () => {
                             ))}
                         </ul>
                         <div>Total Cost: ${calculateTotalCost()}</div>
+                        <button onClick={handleSubmit}>Submit</button>
+                        <Link to="/data-form">Go to Data Form</Link>
                     </div>
-                    <button onClick={handleSubmit}>Submit</button>
+                    
                 </div>
             </div>
         </section>
