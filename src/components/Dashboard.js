@@ -4,17 +4,40 @@ import 'react-calendar';
 
 const Dashboard = () => {
     const [selectedDate, setSelectedDate] = useState(null);
-    const [selectedDates, setSelectedDates] = useState([]);
+    const [billName, setBillName] = useState('');
+    const [billCost, setBillCost] = useState('');
+    const [billInfo, setBillInfo] = useState([]);
 
     const handleDayClick = (date) => {
-        if (selectedDates.length < 5) {
-            setSelectedDates([...selectedDates, date]);
+        setSelectedDate(date);
+    };
+
+    const handleAddBill = () => {
+        if (selectedDate) {
+            if (billName && billCost) {
+                setBillInfo([...billInfo, { date: selectedDate.toDateString(), name: billName, cost: Number(billCost) }]);
+                setBillName('');
+                setBillCost('');
+            }
         }
     };
 
-    const handleRemoveDate = (dateToRemove) => {
-        const updatedDates = selectedDates.filter((date) => date !== dateToRemove);
-        setSelectedDates(updatedDates);
+    const handleRemoveBill = (index) => {
+        const updatedBills = [...billInfo];
+        updatedBills.splice(index, 1);
+        setBillInfo(updatedBills);
+    };
+
+    const calculateTotalCost = () => {
+        const totalCost = billInfo.reduce((acc, bill) => acc + bill.cost, 0);
+        return totalCost.toFixed(2); // Format the total cost to two decimal places
+    };
+
+    const handleSubmit = () => {
+        // You can implement your submission logic here
+        // For example, you can send the billInfo data to a server
+        // or perform any other action you need.
+        console.log('Submit button clicked');
     };
 
     return (
@@ -25,18 +48,37 @@ const Dashboard = () => {
                     <div className="calendar-container">
                         <Calendar onClickDay={handleDayClick} value={selectedDate} />
                     </div>
-                    <button onClick={() => setSelectedDate(null)}>Clear Highlight</button>
-                </div>
-                <div className="selected-dates">
-                    <h2>Selected Dates:</h2>
-                    <ul>
-                        {selectedDates.map((date) => (
-                            <li key={date.toISOString()}>
-                                {date.toDateString()}{' '}
-                                <button onClick={() => handleRemoveDate(date)}>Remove</button>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="bill-section">
+                        <input
+                            type="text"
+                            placeholder="Name of Bill"
+                            value={billName}
+                            onChange={(e) => setBillName(e.target.value)}
+                        />
+                        <input
+                            type="number"
+                            placeholder="Cost"
+                            value={billCost}
+                            onChange={(e) => setBillCost(e.target.value)}
+                        />
+                        <button onClick={handleAddBill}>Add Bill</button>
+                        <button onClick={() => setSelectedDate(null)}>Clear Highlight</button>
+                    </div>
+                    <div className="bill-list">
+                        <h2>Bill List</h2>
+                        <ul>
+                            {billInfo.map((bill, index) => (
+                                <li key={index}>
+                                    <span>Date: {bill.date}</span>
+                                    <span>Name: {bill.name}</span>
+                                    <span>Cost: ${bill.cost.toFixed(2)}</span>
+                                    <button onClick={() => handleRemoveBill(index)}>Remove</button>
+                                </li>
+                            ))}
+                        </ul>
+                        <div>Total Cost: ${calculateTotalCost()}</div>
+                    </div>
+                    <button onClick={handleSubmit}>Submit</button>
                 </div>
             </div>
         </section>
