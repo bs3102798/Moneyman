@@ -30,7 +30,7 @@ const Dashboard = () => {
 
     const calculateTotalCost = () => {
         const totalCost = billInfo.reduce((acc, bill) => acc + bill.cost, 0);
-        return totalCost.toFixed(2); // Format the total cost to two decimal places
+        return totalCost.toFixed(2); 
     };
 
     const handleSubmit = () => {
