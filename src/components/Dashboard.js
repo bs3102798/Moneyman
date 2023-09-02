@@ -89,7 +89,7 @@ const Dashboard = () => {
                         </ul>
                         <div>Total Cost: ${calculateTotalCost()}</div>
                         <button onClick={handleSubmit}>Submit</button>
-                        <Link to="/data-form">Go to Data Form</Link>
+                        
                     </div>
                     
                 </div>
@@ -99,3 +99,22 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+function Dashboard() {
+    const [totalCost, setTotalCost] = useState(0); // Initialize with an initial value
+  
+    // Your calculateTotalCost function here
+  
+    const handleSubmit = () => {
+      // Calculate the total cost and update the state
+      const calculatedTotalCost = calculateTotalCost(); // Implement this function
+      setTotalCost(calculatedTotalCost);
+    };
+  
+    return (
+      <div>
+        <div>Total Cost: ${totalCost}</div>
+        <button onClick={handleSubmit}>Submit</button>
+      </div>
+    );
