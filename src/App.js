@@ -5,6 +5,7 @@ import About from './components/Dashboard';
 import Portfolio from './components/DataForm';
 import Resume from './components/Resume';
 import Contact from './components/Login';
+import DisplayedCalendarOption from './components/displayedCalendarOptionDisplayedCalendarOption';
 
 const App = () => {
   return (
@@ -24,10 +25,9 @@ const App = () => {
 const Home = () => {
   return <div>Welcome to the homepage!</div>;
 };
-export default App;
 
 
-DisplayedCalendarOption({ calendar, onToggle, onColorChanged }) ;{
+function displayedCalendarOption({ calendar, onToggle, onColorChanged }) {
   return (
     <>
       <div>{calendar.name}</div>
