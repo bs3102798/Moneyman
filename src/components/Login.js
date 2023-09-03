@@ -20,8 +20,7 @@ const Login = () => {
             password: loginPassword,
         };
 
-        // Send loginData to the server for authentication
-        // Implement your login logic here
+      
     };
 
     return (
@@ -74,8 +73,7 @@ const SignUp = () => {
             email: signupEmail,
         };
 
-        // Send signupData to the server for user registration
-        // Implement your sign-up logic here
+      
     };
 
     return (
