@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar';
 import { Link } from 'react-router-dom';
+import DataForm from './DataForm';
 
 const Dashboard = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [billName, setBillName] = useState('');
     const [billCost, setBillCost] = useState('');
     const [billInfo, setBillInfo] = useState([]);
+    const [totalCost, setTotalCost] = useState(0);
 
     const handleDayClick = (date) => {
         setSelectedDate(date);
     };
 
     const handleAddBill = () => {
-        if (selectedDate) {
-            if (billName && billCost) {
-                setBillInfo([...billInfo, { date: selectedDate.toDateString(), name: billName, cost: Number(billCost) }]);
-                setBillName('');
-                setBillCost('');
-            }
+        if (selectedDate && billName && billCost) {
+            setBillInfo([...billInfo, { date: selectedDate.toDateString(), name: billName, cost: parseFloat(billCost) }]);
+            setBillName('');
+            setBillCost('');
         }
     };
 
@@ -30,26 +30,16 @@ const Dashboard = () => {
     };
 
     const calculateTotalCost = () => {
-        const totalCost = billInfo.reduce((acc, bill) => acc + bill.cost, 0);
-        return totalCost.toFixed(2); 
+        const total = billInfo.reduce((acc, bill) => acc + bill.cost, 0);
+        return total.toFixed(2);
     };
 
     const handleSubmit = () => {
-        // You can implement your submission logic here
-        // For example, you can send the billInfo data to a server
-        // or perform any other action you need.
-        console.log('Submit button clicked');
-        const calculatedTotalCost = calculateTotalCost(); // Implement this function
-    setTotalCost(calculatedTotalCost);
-    };
+        const calculatedTotalCost = calculateTotalCost();
+        setTotalCost(calculatedTotalCost);
 
-    return (
-        <div>
-          <div>Total Cost: ${totalCost}</div>
-          <button onClick={handleSubmit}>Submit</button>
-        </div>
-      );
-    }
+        console.log('Submit button clicked');
+    };
 
     return (
         <section id="about">
@@ -89,32 +79,14 @@ const Dashboard = () => {
                         </ul>
                         <div>Total Cost: ${calculateTotalCost()}</div>
                         <button onClick={handleSubmit}>Submit</button>
-                        
                     </div>
-                    
                 </div>
+            </div>
+            <div>
+                <DataForm totalCost={totalCost} />
             </div>
         </section>
     );
 };
 
 export default Dashboard;
-
-
-function Dashboard() {
-    const [totalCost, setTotalCost] = useState(0); // Initialize with an initial value
-  
-    // Your calculateTotalCost function here
-  
-    const handleSubmit = () => {
-      // Calculate the total cost and update the state
-      const calculatedTotalCost = calculateTotalCost(); // Implement this function
-      setTotalCost(calculatedTotalCost);
-    };
-  
-    return (
-      <div>
-        <div>Total Cost: ${totalCost}</div>
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-    );
