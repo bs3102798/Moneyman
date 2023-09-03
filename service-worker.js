@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Moneyman/precache-manifest.565029aae9dfa164b950147166c150c1.js"
+  "/Moneyman/precache-manifest.4378ed40545d9fae3467bb487cecc8e7.js"
 );
 
 workbox.clientsClaim();
