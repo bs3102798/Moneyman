@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "fab4139bc0c229aa23db",
+    "revision": "3cb32ad1446df87c3b7b",
     "url": "/Moneyman/static/css/main.ae7518ce.chunk.css"
   },
   {
-    "revision": "fab4139bc0c229aa23db",
-    "url": "/Moneyman/static/js/main.fab4139b.chunk.js"
+    "revision": "3cb32ad1446df87c3b7b",
+    "url": "/Moneyman/static/js/main.3cb32ad1.chunk.js"
   },
   {
     "revision": "b5dec1235d8d1d118e4f",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Moneyman/static/js/runtime~main.78d30991.js"
   },
   {
-    "revision": "decbf55d6ae2cf3eaa8e9666e0d2a135",
+    "revision": "d523d429540cde197ff2b4901ac5ff17",
     "url": "/Moneyman/index.html"
   }
 ];
