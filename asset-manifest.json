@@ -1,7 +1,7 @@
 {
   "main.css": "/Moneyman/static/css/main.ae7518ce.chunk.css",
-  "main.js": "/Moneyman/static/js/main.3cb32ad1.chunk.js",
-  "main.js.map": "/Moneyman/static/js/main.3cb32ad1.chunk.js.map",
+  "main.js": "/Moneyman/static/js/main.7856c810.chunk.js",
+  "main.js.map": "/Moneyman/static/js/main.7856c810.chunk.js.map",
   "static/js/1.b5dec123.chunk.js": "/Moneyman/static/js/1.b5dec123.chunk.js",
   "static/js/1.b5dec123.chunk.js.map": "/Moneyman/static/js/1.b5dec123.chunk.js.map",
   "static/js/2.a66fa942.chunk.js": "/Moneyman/static/js/2.a66fa942.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/Moneyman/static/js/runtime~main.78d30991.js.map",
   "static/css/main.ae7518ce.chunk.css.map": "/Moneyman/static/css/main.ae7518ce.chunk.css.map",
   "index.html": "/Moneyman/index.html",
-  "precache-manifest.2ae75eab216fc7255ee84dfe970abee1.js": "/Moneyman/precache-manifest.2ae75eab216fc7255ee84dfe970abee1.js",
+  "precache-manifest.565029aae9dfa164b950147166c150c1.js": "/Moneyman/precache-manifest.565029aae9dfa164b950147166c150c1.js",
   "service-worker.js": "/Moneyman/service-worker.js"
 }
