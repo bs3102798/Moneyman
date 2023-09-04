@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar';
-import { Link } from 'react-router-dom';
 import DataForm from './DataForm';
 
 const Dashboard = () => {
@@ -83,7 +82,8 @@ const Dashboard = () => {
                 </div>
             </div>
             <div>
-                <DataForm totalCost={totalCost} />
+                {/* Pass calculateTotalCost as a prop to DataForm */}
+                <DataForm totalCost={totalCost} calculateTotalCost={calculateTotalCost} />
             </div>
         </section>
     );
