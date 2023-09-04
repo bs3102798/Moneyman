@@ -29,7 +29,6 @@ const App = () => {
     </Router>
   );
 };
-
 const Home = () => {
   return <div>Welcome to the homepage!</div>;
 };
