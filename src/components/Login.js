@@ -20,12 +20,11 @@ const Login = () => {
             password: loginPassword,
         };
 
-        // Send loginData to the server for authentication
-        // Implement your login logic here
+        // Add your login logic here
     };
 
     return (
-        <section id="login">
+        <div>
             <h2>Login</h2>
             <form onSubmit={handleLoginSubmit}>
                 <div>
@@ -44,11 +43,11 @@ const Login = () => {
                     <button type="submit">Login</button>
                 </div>
             </form>
-        </section>
+        </div>
     );
 };
 
-const SignUp = () => {
+const Register = () => {
     const [signupUsername, setSignupUsername] = useState('');
     const [signupPassword, setSignupPassword] = useState('');
     const [signupEmail, setSignupEmail] = useState('');
@@ -65,7 +64,7 @@ const SignUp = () => {
         setSignupEmail(event.target.value);
     };
 
-    const handleSignupSubmit = async (event) => {
+    const handleRegisterSubmit = async (event) => {
         event.preventDefault();
 
         const signupData = {
@@ -74,14 +73,13 @@ const SignUp = () => {
             email: signupEmail,
         };
 
-        // Send signupData to the server for user registration
-        // Implement your sign-up logic here
+        // Add your registration logic here
     };
 
     return (
-        <section id="signup">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSignupSubmit}>
+        <div>
+            <h2>Register</h2>
+            <form onSubmit={handleRegisterSubmit}>
                 <div>
                     <label>
                         Username:
@@ -101,18 +99,20 @@ const SignUp = () => {
                     </label>
                 </div>
                 <div>
-                    <button type="submit">Sign Up</button>
+                    <button type="submit">Sign-up</button>
                 </div>
             </form>
-        </section>
+        </div>
     );
 };
 
 const App = () => {
     return (
         <div>
-            <Login />
-            <SignUp />
+            <div className="auth-box">
+                <Login />
+                <Register />
+            </div>
         </div>
     );
 };

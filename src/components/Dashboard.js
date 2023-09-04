@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar';
+import { Link } from 'react-router-dom';
+import DataForm from './DataForm';
 
 const Dashboard = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [billName, setBillName] = useState('');
     const [billCost, setBillCost] = useState('');
     const [billInfo, setBillInfo] = useState([]);
+    const [totalCost, setTotalCost] = useState(0);
 
     const handleDayClick = (date) => {
         setSelectedDate(date);
     };
 
     const handleAddBill = () => {
-        if (selectedDate) {
-            if (billName && billCost) {
-                setBillInfo([...billInfo, { date: selectedDate.toDateString(), name: billName, cost: Number(billCost) }]);
-                setBillName('');
-                setBillCost('');
-            }
+        if (selectedDate && billName && billCost) {
+            setBillInfo([...billInfo, { date: selectedDate.toDateString(), name: billName, cost: parseFloat(billCost) }]);
+            setBillName('');
+            setBillCost('');
         }
     };
 
@@ -29,14 +30,14 @@ const Dashboard = () => {
     };
 
     const calculateTotalCost = () => {
-        const totalCost = billInfo.reduce((acc, bill) => acc + bill.cost, 0);
-        return totalCost.toFixed(2); 
+        const total = billInfo.reduce((acc, bill) => acc + bill.cost, 0);
+        return total.toFixed(2);
     };
 
     const handleSubmit = () => {
-        // You can implement your submission logic here
-        // For example, you can send the billInfo data to a server
-        // or perform any other action you need.
+        const calculatedTotalCost = calculateTotalCost();
+        setTotalCost(calculatedTotalCost);
+
         console.log('Submit button clicked');
     };
 
@@ -77,9 +78,12 @@ const Dashboard = () => {
                             ))}
                         </ul>
                         <div>Total Cost: ${calculateTotalCost()}</div>
+                        <button onClick={handleSubmit}>Submit</button>
                     </div>
-                    <button onClick={handleSubmit}>Submit</button>
                 </div>
+            </div>
+            <div>
+                <DataForm totalCost={totalCost} />
             </div>
         </section>
     );
