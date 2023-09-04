@@ -2,10 +2,7 @@ import React from 'react';
 
 function DataForm({ totalCost, calculateTotalCost }) {
     const handleDataFormSubmit = () => {
-
         console.log('Total Cost from DataForm:', totalCost);
-
-
         const recalculatedTotalCost = calculateTotalCost();
         console.log('Recalculated Total Cost:', recalculatedTotalCost);
     };
