@@ -19,8 +19,6 @@ const Login = () => {
             username: loginUsername,
             password: loginPassword,
         };
-
-        // Add your login logic here
     };
 
     return (
