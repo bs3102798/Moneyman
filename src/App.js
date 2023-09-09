@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
+import Nav from './components/Header';
 import About from './components/Dashboard';
+import Home from './components/Home'
 import Portfolio from './components/DataForm';
+import './App.css'
 
 import Contact from './components/Login';
 
@@ -10,7 +12,7 @@ import Contact from './components/Login';
 const App = () => {
   return (
     <Router>
-      <Header />
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<About />} />
@@ -21,9 +23,9 @@ const App = () => {
     </Router>
   );
 };
-const Home = () => {
-  return <div>Welcome to the homepage!</div>;
-};
+// const Home = () => {
+//   return <div class="home">Welcome to the homepage!</div>;
+// };
 
 
 

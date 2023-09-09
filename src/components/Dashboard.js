@@ -43,7 +43,6 @@ const Dashboard = () => {
     return (
         <section id="about">
             <div>
-                <h1>Calendar</h1>
                 <div className="box">
                     <div className="calendar-container">
                         <Calendar onClickDay={handleDayClick} value={selectedDate} />
