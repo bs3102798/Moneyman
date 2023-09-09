@@ -8,7 +8,7 @@ function DataForm({ totalCost, calculateTotalCost }) {
     };
 
     return (
-        <div>
+        <div class="data">
             <h2>Data Form</h2>
             <p>Total Cost from Dashboard: ${totalCost}</p>
             <button onClick={handleDataFormSubmit}>Submit DataForm</button>

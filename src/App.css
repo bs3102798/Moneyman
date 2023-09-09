@@ -1,19 +1,98 @@
-.App {
+/* .App {
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+} */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  color: #213547;
+  background-color: #ffffff;
 }
 
-.App-header {
+Nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(25, 25, 30);
+  font-family: 'Exo 2', sans-serif;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+Link {
+  text-decoration: none;
+
+}
+
+.homeP {
+  padding: 100px;
+  text-align: center;
+  background-color: #242425;
+  color: black
+}
+
+.about {
+  background-color: #242425;
+  padding: 1px;
+
+}
+
+.auth-box {
+  background-color: #242425;
+  color: rgb(2, 1, 67);
+  padding: 50px;
+}
+
+.bill-list {
+  background-color: #242425;
+  padding: 1px;
+
+}
+
+.box {
+  background-color: #242425;
+  padding: 1px;
+  color: rgb(142, 38, 26);
+  padding-top: 80px;
+}
+
+
+.data {
+  background-color: #242425;
+  padding: 1px;
+  color: rgb(142, 38, 26)
+}
+
+.title {
+  background-color: #242425;
+}
+
+.calendar-container {
+  text-align: center;
+}
+
+/* .App-header {
   background-color: #3863bb;
   min-height: 100vh;
   display: flex;
@@ -22,14 +101,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(195, 11, 11);
-}
+} */
 
-.App-link {
+/* .App-link {
   color: #2a8636;
-}
+} */
 
 
-
+/* 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,4 +117,6 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+/* background-color: #242424; */

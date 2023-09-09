@@ -2,19 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Header = () => {
+const Nav = () => {
     return (
-        <header>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/dashboard">Dashboard</Link></li>
-                    {/* <li><Link to="/dataform">dataform</Link></li> */}
-                    <li><Link to="/login">Login</Link></li>
-                </ul>
-            </nav>
-        </header>
+        <nav>
+            <Link to="/">Home &nbsp;  &nbsp;  &nbsp;  &nbsp;</Link>
+            <Link to="/dashboard">Dashboard &nbsp;  &nbsp;  &nbsp;  &nbsp;</Link>
+            {/* <li><Link to="/dataform">dataform</Link></li> */}
+            <Link to="/login">Login</Link>
+        </nav>
     );
 };
 
-export default Header;
+export default Nav;
